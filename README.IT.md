@@ -1,45 +1,28 @@
-[![License](https://img.shields.io/github/license/italia/bootstrap-italia.svg)](https://github.com/DavidePapero/AutomateMySlqBackup/issues)
+[![License](https://img.shields.io/github/license/italia/bootstrap-italia.svg)](https://github.com/DavidePapero/AutomateMySlqBackup/LICENSE)
 [![ciccio](https://img.shields.io/badge/Status-alpha_project-blue)](https://github.com/DavidePapero/AutomateMySlqBackup/new/main)
 
-*Read this in other languages: [English](README.EN.md).*
+*Read this in other languages: [English](README.md).*
 
-Ecco qualche domanda che ti aiuterà:
+## Automatizza il backup dei tuoi database mysql
 
-    Qual è la tua motivazione?
-    Perché hai creato questo progetto?
-    Quale problema risolve?
-    Cosa hai imparato?
-    Cosa lo differenzia dagli altri?
-    Se il tuo progetto ha molte funzionalità, considera l'aggiunta di una sezione "Features" nella quale elencarle.
+Questo progetto l'ho creato per automatizzare il backup a caldo di database mysql senza dovere spendere 
+soldi per comprare utility esterne.
 
-Cosa includere nel tuo README
-1. Titolo del progetto
+Il backup sono conservati fino al numero indicato dall'utente.
 
-Questo è il nome del progetto. Descrive tutto il progetto in una frase e aiuta le persone a capire qual è l'obiettivo, ovvero a cosa punta il progetto.
-2. Descrizione del progetto
+## Prerequisiti
 
-Questa è una componente importante del progetto che molti sviluppatori inesperti tendono a sottovalutare.
+Nella macchina in cui gira è necessario sia installato il docker engine, oppure docker desktop.
 
-La descrizione è un aspetto estremamente importante del tuo progetto. Una descrizione ben fatta ti permette di mostrare il tuo lavoro ad altri sviluppatori e a potenziali datori di lavoro.
+## Configurazione
 
-La qualità di un buona descrizione è spesso la differenza tra un buon progetto ed un progetto carente. Uno buon README sfrutta la possibilità per spiegare e mostrare:
+Anche se non si vuole cambiare il comportamento modificato lo script python bisogna comunque
+configurare il file config.json con i parametri necessari per accedere ai propri database.
 
-    Cosa fa la tua applicazione,
-    Perché hai utilizzato determinate tecnologie,
-    Alcune delle difficoltà che hai affrontato e le funzionalità che speri di aggiungere in futuro.
+Se si vuole che venga mandata una mail reipilogativa andrà configurato l'SMTP.
 
-3. Indice (facoltativo)
+## Prima installazione
 
-Se il tuo README è molto lungo, forse è il caso di aggiungere un indice per rendere più semplice la navigazione tra le sezioni.
-4. Come installare ed eseguire il progetto
+Per installare il programma bisogna compilare l'immagine docker e poi lanciare come demone il container
 
-Se stai lavorando su un progetto che l'utente deve installare o eseguire in locale in una macchina come un "POS", dovresti includere i passaggi per installare il tuo progetto ed anche le dipendenze, se ci sono.
 
-Metti a disposizione una descrizione passo passo di come creare ed eseguire l'ambiente di sviluppo.
-5. Come usare il progetto
-
-Fornisci istruzioni ed esempi a utenti e collaboratori. Semplificherà loro la vita quando avranno un problema - avranno sempre un posto dove trovare cosa aspettarsi.
-
-Puoi anche usare supporti visivi includendo materiale come screenshot per mostrare esempi del progetto in esecuzione o per mostrare la struttura e i principi di design usati nel tuo progetto.
-
-Se il tuo progetto richiede autenticazioni come password e username, questa è una buona sezione nella quale includere le credenziali.
