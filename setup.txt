@@ -1,0 +1,5 @@
+docker stop mysql-bck
+docker rm mysql-bck
+docker rmi mysql-bck-i
+docker build -t mysql-bck-i .
+docker run -d --name mysql-bck --network=host -v /home/server/Documents/backup-mysql/work:/app/work mysql-bck-i

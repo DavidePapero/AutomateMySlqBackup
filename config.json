@@ -1,0 +1,63 @@
+{
+    "name" : "Report: Backup AWS small DB & Intranet",
+    "send_mail" : 
+    {
+        "to": ["davide.infantino@hyppo.com"],
+        "from": "Hyppo Backup <info@hyppo.com>",
+        "host"  : "email-smtp.zona.amazonaws.com",
+        "port"  : 587,
+        "user"  : "bla-bla",
+        "pwd"   : "bla-bla-bla"
+    },
+    "post_processor" : true,
+    "databases" : [
+        {
+            "name" : "backup-db-collaudo",
+            "host" : "192.a.b.c",
+            "port" : 3306,
+            "user" : "hyppo",
+            "password" : "password-hyppo",
+            "database" : "Collaudo",
+            "backup_file" : "work/collaudo.sql",
+            "error_file" : "error.txt",
+            "backup_number" : 120,
+            "backup_path" : "work/collaudo"
+        },
+        {
+            "name" : "backup-db-collaudo-test",
+            "host" : "192.a.b.d",
+            "port" : 3306,
+            "user" : "hyppo 2",
+            "password" : "altra-password-hyppo",
+            "database" : "Collaudo",
+            "backup_file" : "work/collaudo.sql",
+            "error_file" : "error.txt",
+            "backup_number" : 120,
+            "backup_path" : "work/collaudo-test"
+        },
+        {
+            "name" : "backup-db-aws-mantisbt",
+            "host" : "172.a.b.c",
+            "port" : 3306,
+            "user" : "hyppo",
+            "password" : "una-altra-password-hyppo",
+            "database" : "bugtracker",
+            "backup_file" : "work/bugtracker.sql",
+            "error_file" : "error.txt",
+            "backup_number" : 20,
+            "backup_path" : "work/mantisbt"
+        },
+        {
+            "name" : "backup-db-aws-leantime",
+            "host" : "172.a.b.d",
+            "port" : 3306,
+            "user" : "hyppo",
+            "password" : "ennesima-password-hyppo",
+            "database" : "leantime",
+            "backup_file" : "work/leantime.sql",
+            "error_file" : "error.txt",
+            "backup_number" : 20,
+            "backup_path" : "work/leantime"
+        }
+    ]
+}
