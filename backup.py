@@ -269,8 +269,10 @@ class MySqlDump():
 
         if send_mail_active is True:
             delta_time_global = dt_global.get_diff()
-            subject = f"{self.config.get('name', 'Backup report')}: {'OK' if all_bck_ok is True else 'FAILED'} - {today}"
-            mail_body = f"Global time: {delta_time_global}\n" + mail_body
+            # I read the status of these company backups from my private smartphone. I therefore need a compact header
+            subject : str = self.config.get('send_mail', {}).get('name', 'Backup report: ') + ('OK' if all_bck_ok is True else 'FAILED')
+            head : str = f"Start: {today}\nTotale time: {delta_time_global}\n\n\n"
+            mail_body = head + mail_body
 
             self.sendMail(subject, mail_body)
 

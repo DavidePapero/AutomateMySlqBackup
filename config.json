@@ -1,7 +1,7 @@
 {
-    "name" : "Report: Backup AWS small DB & Intranet",
     "send_mail" : 
     {
+        "subject" : "Backup Report: ",
         "to": ["davide.infantino@hyppo.com"],
         "from": "Hyppo Backup <info@hyppo.com>",
         "host"  : "email-smtp.zona.amazonaws.com",
