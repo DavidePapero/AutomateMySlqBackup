@@ -277,8 +277,6 @@ class MySqlDump():
             self.sendMail(subject, mail_body)
 
     def Loop(self) -> None:
-        global LOOP
-
         # we are running in docker engine, let's do things right
         signal.signal(signal.SIGINT,  signal_handler)
         signal.signal(signal.SIGTERM, signal_handler)
@@ -291,7 +289,7 @@ class MySqlDump():
         for singleconfig in ReadConfigFile().get('databases', []):
             post_processor.StartBackupProcess(singleconfig.get('name', ''))
 
-        while self.LOOP:
+        while MySqlDump.LOOP:
             time.sleep(1)
             dtNow : datetime.datetime = datetime.datetime.now()
             if dtNow.weekday() in (5, 6):
@@ -320,3 +318,4 @@ if __name__ == '__main__':
     m = MySqlDump()
     m.Loop()
     print('Buonanotte, io qui ho finito')
+
